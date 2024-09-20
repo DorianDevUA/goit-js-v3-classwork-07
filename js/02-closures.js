@@ -7,17 +7,17 @@
  * это называется «замыкание».
  */
 
-const fnA = function (parameter) {
-  const innerVariable = 'значение внутренней переменной функции fnA';
+// const fnA = function (parameter) {
+//   const innerVariable = 'значение внутренней переменной функции fnA';
 
-  const innerFunction = function () {
-    console.log(parameter);
-    console.log(innerVariable);
-    console.log('Это вызов innerFunction');
-  };
+//   const innerFunction = function () {
+//     console.log(parameter);
+//     console.log(innerVariable);
+//     console.log('Это вызов innerFunction');
+//   };
 
-  return innerFunction;
-};
+//   return innerFunction;
+// };
 
 // const fnB = fnA(555);
 
@@ -29,7 +29,7 @@ const fnA = function (parameter) {
  * Поварёнок
  */
 // const makeDish = function (sheffName, dish) {
-//     console.log(`${sheffName} готовит ${dish}`);
+//   console.log(`${sheffName} готовит ${dish}`);
 // };
 
 // makeDish('Mango', 'пирожок');
@@ -40,22 +40,22 @@ const fnA = function (parameter) {
 // makeDish('Poly', 'супик');
 // makeDish('Poly', 'кофе');
 
-const makeSheff = function (name) {
-  const innverVar = 555;
-  const message = 'hello';
+// const makeSheff = function (name) {
+//   // const innverVar = 555;
+//   // const message = 'hello';
 
-  const makeDish = function (dish) {
-    console.log(message);
-    console.log(innverVar);
-    console.log(`${name} готовит ${dish}`);
-  };
+//   const makeDish = function (dish) {
+//     console.log(`${name} готовит ${dish}`);
+//     // console.log(message);
+//     // console.log(innverVar);
+//   };
 
-  return makeDish;
-};
+//   return makeDish;
+// };
 
 // const mango = makeSheff('Mango');
 
-// console.dir(mango);
+// // console.dir(mango);
 
 // mango('котлеты');
 // mango('пирожок');
@@ -86,11 +86,11 @@ const makeSheff = function (name) {
 // console.log(rounder(5.1234, 2));
 // console.log(rounder(3.4567, 3));
 
-const rounder = function (places) {
-  return function (number) {
-    return Number(number.toFixed(places));
-  };
-};
+// const rounder = function (places) {
+//   return function (number) {
+//     return Number(number.toFixed(places));
+//   };
+// };
 
 // const rounder2 = rounder(2);
 // const rounder3 = rounder(3);
@@ -109,47 +109,47 @@ const rounder = function (places) {
  * Приватные данные и функции - скрытие реализации, интерфейс
  */
 
-const salaryManagerFactory = function (employeeName, baseSalary = 0) {
-  let salary = baseSalary;
+// // const salaryManagerFactory = function (employeeName, baseSalary = 0) {
+// //   let salary = baseSalary;
 
-  return {
-    raise(amount) {
-      if (amount > 1000) {
-        return 'Ты офигел?';
-      }
+// //   return {
+// //     raise(amount) {
+// //       if (amount > 1000) {
+// //         return 'Ты офигел?';
+// //       }
 
-      salary += amount;
-    },
-    lower(amount) {
-      salary -= amount;
-    },
-    current() {
-      return `Текущая зарпалата ${employeeName} - ${salary}`;
-    },
-  };
-};
+// //       salary += amount;
+// //     },
+// //     lower(amount) {
+// //       salary -= amount;
+// //     },
+// //     current() {
+// //       return `Текущая зарпалата ${employeeName} - ${salary}`;
+// //     },
+// //   };
+// // };
 
-const salaryManager = salaryManagerFactory('Mango', 5000);
+// // const salaryManager = salaryManagerFactory('Mango', 5000);
 
-console.log(salaryManager.current());
+// // console.log(salaryManager.current());
 
-console.log(salaryManager.raise(10000000));
+// // console.log(salaryManager.raise(10000000));
 
-console.log(salaryManager.current());
+// // console.log(salaryManager.current());
 
 // const myLibFactory = function () {
-//     let value = 0;
+//   let value = 0;
 
-//     const add = function (num) {
-//         value += num;
-//     };
+//   const add = function (num) {
+//     value += num;
+//   };
 
-//     return {
-//         add: add,
-//         getValue() {
-//             return value;
-//         },
-//     };
+//   return {
+//     add: add,
+//     getValue() {
+//       return value;
+//     },
+//   };
 // };
 
 // const myLib = myLibFactory();
